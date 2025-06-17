@@ -7,7 +7,6 @@ export const StyledButton = styled.button`
   border: none;
   border-radius: 4px;
   cursor: pointer;
-
   font-size: 14px;
   font-weight: bold;
   transition: 0.3s;

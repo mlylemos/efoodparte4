@@ -12,4 +12,3 @@ export const List = styled.div`
     justify-content: center;
     gap: 24px;
 `
-

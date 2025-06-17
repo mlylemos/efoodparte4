@@ -1,16 +1,20 @@
 import styled from 'styled-components'
 import bannerImage from '../../assets/banner.jpg'
 
-export const HeaderBar = styled.header`
+type HeaderProps = {
+  $isHome: boolean
+}
+
+export const HeaderBar = styled.header<HeaderProps>`
   background-image: url(${bannerImage});
   background-size: cover;
   background-position: center;
   height: 186px;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: ${({ $isHome }) => ($isHome ? 'center' : 'space-between')};
   padding: 0 40px;
-  position: relative; // Não precisa ser absolute
+  position: relative;
   width: 100%;
   top: 0;
   left: 0;
@@ -19,6 +23,7 @@ export const HeaderBar = styled.header`
 
 export const Logo = styled.img`
   width: 125px;
+  margin-bottom: 8px;
 `
 
 export const Nav = styled.div`
@@ -30,4 +35,19 @@ export const Nav = styled.div`
 export const Cart = styled.div`
   color: #e66767;
   font-size: 16px;
+`
+
+export const CenteredWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 50px; 
+`
+
+export const CenteredText = styled.p`
+  font-size: 18px;
+  color: #e66767;
+  text-align: center;
+  font-weight: bold;
+  margin: 0;
 `

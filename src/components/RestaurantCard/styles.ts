@@ -82,7 +82,6 @@ export const Description = styled.p`
   margin: 8px 0;
   line-height: 1.4;
 `
-
 export const Button = styled.button`
   margin-top: 8px;
   padding: 8px 16px;

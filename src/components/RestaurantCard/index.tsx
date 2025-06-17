@@ -4,6 +4,7 @@ import estrela from '../../assets/estrela.png'
 import { Link } from 'react-router-dom'
 
 type Props = {
+    id: number
     title: string
     image: string
     tags: string[]
@@ -11,7 +12,7 @@ type Props = {
     rating: number
 }
 
-const RestaurantCard = ({ title, image, tags, description, rating }: Props) => (
+const RestaurantCard = ({ id, title, image, tags, description, rating }: Props) => (
     <Card>
         <Image src={image} alt={title} />
         <TagsContainer>
@@ -27,7 +28,7 @@ const RestaurantCard = ({ title, image, tags, description, rating }: Props) => (
                 </RatingContainer>
             </TitleRating>
             <Description>{description}</Description>
-            <Link to={`/restaurante/${title}`}>
+            <Link to={`/restaurante/${id}`}>
                 <Button>Saiba mais</Button>
             </Link>
         </Info>

@@ -1,14 +1,39 @@
 import styled from 'styled-components'
 
 export const Card = styled.div`
-    background-color: #e66767;
+    background-color: #fff;
+    border: 3px solid #e66767;
     border-radius: 8px;
     padding: 16px;
-    color: #ffebd9;
-    max-width: 320px;
-`
-export const DishButton = styled.button`
-    margin-top: 12px;
+    width: 320px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    height: 100%; 
+    `
+
+    export const Image = styled.img`
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 8px;
+    `
+
+    export const Title = styled.h3`
+    font-size: 18px;
+    margin: 16px 0 8px;
+    color: #e66767;
+    `
+
+    export const Description = styled.p`
+    font-size: 14px;
+    color: #555;
+    margin-bottom: 12px;
+    `
+
+    export const DishButton = styled.button`
+    margin-top: auto; 
     padding: 8px 16px;
     background-color: #ffebd9;
     color: #e66767;
@@ -20,41 +45,28 @@ export const DishButton = styled.button`
     transition: background-color 0.2s;
 
     &:hover {
-        background-color:rgb(226, 203, 74);
+        background-color: rgb(226, 203, 74);
     }
-`
+    `
 
-export const Image = styled.img`
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
-    border-radius: 8px;
-`
-
-export const Info = styled.div`
+    export const Info = styled.div`
     margin-top: 8px;
-`
+    margin-bottom: 12px;
+    `
 
-export const Title = styled.h3`
-    font-size: 18px;
-    font-weight: bold;
-    margin: 8px 0;
-`
-
-export const Description = styled.p`
-    font-size: 14px;
-    line-height: 1.4;
-`
-
-export const Button = styled.button`
-    margin-top: 12px;
-    background-color: #ffebd9;
-    color: #e66767;
+    export const Button = styled.button`
+    margin-top: auto;
+    padding: 8px 16px;
+    background-color: #e66767;
+    color: #fff;
     border: none;
     border-radius: 4px;
-    font-weight: bold;
-    padding: 8px 12px;
     cursor: pointer;
+    font-weight: bold;
     font-size: 14px;
-    width: 100%;
+    transition: 0.3s;
+
+    &:hover {
+        background-color: #c54848;
+    }
 `

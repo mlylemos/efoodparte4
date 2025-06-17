@@ -7,7 +7,6 @@ export const Container = styled.footer`
     display: flex;
     flex-direction: column;
     align-items: center;
-    border-top: 300px;
 `
 
 export const SocialLinks = styled.div`
