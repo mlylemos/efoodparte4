@@ -1,0 +1,101 @@
+import styled from 'styled-components'
+
+export const Lista = styled.div`
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 32px;
+  padding: 40px 80px;
+  justify-items: center;
+
+  @media (max-width: 768px) {
+    padding: 24px;
+    grid-template-columns: 1fr;
+  }
+`
+
+export const Card = styled.div`
+  position: relative;
+  width: 472px;
+  background-color: #ffffff;
+  border: 1px solid #e66767;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.05);
+  display: flex;
+  flex-direction: column;
+`
+
+export const Image = styled.img`
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+`
+
+export const TagsContainer = styled.div`
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  display: flex;
+  gap: 8px;
+`
+
+export const Tag = styled.div`
+  background-color: #e66767;
+  color: white;
+  font-size: 12px;
+  padding: 4px 8px;
+  border-radius: 2px;
+`
+
+export const Info = styled.div`
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+`
+
+export const Title = styled.h3`
+  font-size: 18px;
+  color: #e66767;
+  margin: 0;
+`
+
+export const TitleRating = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+`
+
+export const RatingContainer = styled.div`
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+  font-weight: bold;
+  color: #e66767;
+
+  img {
+    width: 16px;
+    margin-left: 4px;
+  }
+`
+
+export const Description = styled.p`
+  font-size: 14px;
+  color: #e66767;
+  margin: 8px 0;
+  line-height: 1.4;
+`
+
+export const Button = styled.button`
+  margin-top: 8px;
+  padding: 8px 16px;
+  background-color: #e66767;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: bold;
+  transition: 0.3s;
+
+  &:hover {
+    background-color: #c54848;
+  }
+`
