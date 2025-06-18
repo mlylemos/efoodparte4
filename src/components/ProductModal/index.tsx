@@ -9,27 +9,26 @@ import {
     Description,
     Portion,
     Button
-} from './styles.ts'
+} from './styles'
+
+import { useDispatch } from 'react-redux'
+import { adicionar } from '../../store/reducers/carrinho'
+import type { Prato } from '../../types'
 
 type Props = {
     isOpen: boolean
     onClose: () => void
-    title: string
-    description: string
-    image: string
-    portion: string
-    price: string
+    prato: Prato
 }
 
-const ProductModal = ({
-    isOpen,
-    onClose,
-    title,
-    description,
-    image,
-    portion,
-    price
-}: Props) => {
+const ProductModal = ({ isOpen, onClose, prato }: Props) => {
+    const dispatch = useDispatch()
+
+    const handleAddToCart = () => {
+        dispatch(adicionar(prato))
+        onClose()
+    }
+
     useEffect(() => {
         const handleEsc = (e: KeyboardEvent) => {
             if (e.key === 'Escape') onClose()
@@ -41,16 +40,20 @@ const ProductModal = ({
 
     if (!isOpen) return null
 
+    const { nome, descricao, foto, porcao, preco } = prato
+
     return (
         <Overlay>
             <ModalContent>
                 <CloseButton onClick={onClose}>×</CloseButton>
-                <Image src={image} alt={title} />
+                <Image src={foto} alt={nome} />
                 <Content>
-                    <Title>{title}</Title>
-                    <Description>{description}</Description>
-                    <Portion>Serve: {portion}</Portion>
-                    <Button onClick={onClose}>Adicionar ao carrinho - R$ {price}</Button>
+                    <Title>{nome}</Title>
+                    <Description>{descricao}</Description>
+                    <Portion>Serve: {porcao}</Portion>
+                    <Button onClick={handleAddToCart}>
+                        Adicionar ao carrinho - R$ {preco.toFixed(2)}
+                    </Button>
                 </Content>
             </ModalContent>
         </Overlay>

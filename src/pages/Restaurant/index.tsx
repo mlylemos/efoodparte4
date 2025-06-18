@@ -37,7 +37,6 @@ const Restaurant = () => {
     return (
         <>
             <Header />
-
             <Banner style={{ backgroundImage: `url(${restaurante.capa})` }}>
                 <BannerText>
                     <h2>{restaurante.titulo}</h2>
@@ -65,11 +64,7 @@ const Restaurant = () => {
                 <ProductModal
                     isOpen={modalOpen}
                     onClose={closeModal}
-                    title={selectedDish.nome}
-                    description={selectedDish.descricao}
-                    image={selectedDish.foto}
-                    portion={selectedDish.porcao}
-                    price={selectedDish.preco.toString()}
+                    prato={selectedDish}
                 />
             )}
         </>
