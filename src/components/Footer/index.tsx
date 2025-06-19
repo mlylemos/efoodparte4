@@ -9,14 +9,14 @@ const Footer = () => (
     <Container>
         <img src={logo} alt="efood" />
         <SocialLinks>
-            <a href="#">
+            <a href="https://www.instagram.com/e.b.a.c/">
                 <img src={instagram} alt="Instagram" />
             </a>
-            <a href="#">
+            <a href="https://www.facebook.com/escolabritanicadeartescriativas/">
                 <img src={facebook} alt="Facebook" />
             </a>
-            <a href="#">
-                <img src={twitter} alt="Twitter" />
+            <a href="https://x.com/E_B_A_C">
+                <img src={twitter} alt="Twitter/X" />
             </a>
         </SocialLinks>
         <Text>

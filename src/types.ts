@@ -5,6 +5,7 @@ export type Prato = {
     foto: string
     porcao: string
     preco: number
+    restauranteId: number
 }
 
 export type Restaurante = {

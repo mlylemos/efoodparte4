@@ -28,7 +28,7 @@ export const Card = styled.div`
 
     export const Description = styled.p`
     font-size: 14px;
-    color: #555;
+    color: black;
     margin-bottom: 12px;
     `
 

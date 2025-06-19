@@ -53,7 +53,7 @@ export const Overlay = styled.div`
 export const Sidebar = styled.aside`
   background-color: #e66767;
   color: #fff;
-  width: 360px;
+  width: 400px;
   height: 100vh;
   padding: 16px;
   position: fixed;
@@ -85,7 +85,7 @@ ul {
     align-items: center;
     gap: 8px;
     margin-bottom: 16px;
-    position: relative; // ADICIONE ESTA LINHA
+    position: relative; 
 
     img {
       width: 60px;
@@ -98,7 +98,6 @@ ul {
       flex: 1;
 
       h3 {
-        font-size: 14px;
         font-weight: bold;
         margin: 0;
       }
@@ -150,4 +149,21 @@ export const ContinueButton = styled.button`
   border-radius: 4px;
   border: none;
   cursor: pointer;
+`
+export const Label = styled.label`
+  font-weight: bold;
+  margin-bottom: 4px;
+  display: block;
+  color: #fff;
+`
+export const Row = styled.div`
+  display: flex;
+  gap: 8px;
+  margin-bottom: 16px;
+
+  div {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+  }
 `

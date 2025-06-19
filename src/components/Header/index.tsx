@@ -35,7 +35,10 @@ const Header = () => {
                         <Nav>Restaurantes</Nav>
                     </Link>
                     <Logo src={logo} alt="efood logo" />
-                    <Cart onClick={() => dispatch(toggleCart())}>
+                    <Cart
+                        style={{ cursor: 'pointer' }}
+                        onClick={() => dispatch(toggleCart())}
+                    >
                         {itens.length} produto(s) no carrinho
                     </Cart>
                 </>

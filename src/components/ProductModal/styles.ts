@@ -29,7 +29,7 @@ export const Overlay = styled.div`
 
     export const CloseButton = styled.button`
     position: absolute;
-    top: 16px;
+    top: 0px;
     right: 16px;
     font-size: 40px;
     background: none;
