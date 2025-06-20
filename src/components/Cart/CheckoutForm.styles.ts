@@ -7,8 +7,8 @@ export const Form = styled.form`
     position: relative;
     display: flex;
     flex-direction: column;
-    gap: 16px;
-    height: 100vh;
+    gap: 9px;
+    height: 100%;
     `
 
     export const Title = styled.h2`
@@ -30,8 +30,10 @@ export const Form = styled.form`
     `
 
     export const Label = styled.label`
-    font-size: 14px;
+    font-size: 17px;
     margin-bottom: 4px;
+    padding-bottom: 0;
+    border-bottom: 0;
     `
 
     export const Input = styled.input`

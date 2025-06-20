@@ -27,7 +27,6 @@ export const LoadingMessage = styled.p`
     color: #fff;
     z-index: 1;
 
-
     h2 {
         font-size: 24px;
         font-weight: bold;
@@ -41,7 +40,6 @@ export const LoadingMessage = styled.p`
         max-width: 700px;
     }
     `
-
 
     export const Container = styled.div`
     max-width: 1024px;

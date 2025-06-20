@@ -24,9 +24,12 @@ const carrinhoSlice = createSlice({
         },
         toggleCart: (state) => {
             state.isOpen = !state.isOpen
+        },
+        limpar: (state) => {
+            state.itens = []
         }
     }
 })
 
-export const { adicionar, remove, toggleCart } = carrinhoSlice.actions
+export const { adicionar, remove, toggleCart, limpar } = carrinhoSlice.actions
 export default carrinhoSlice.reducer

@@ -4,7 +4,7 @@ import * as S from './CheckoutForm.styles'
 type Props = {
     total: string
     onBack: () => void
-    onSuccess: () => void
+    onSuccess: (dados: any) => void
 }
 
 const PaymentForm = ({ total, onBack, onSuccess }: Props) => {
@@ -23,18 +23,18 @@ const PaymentForm = ({ total, onBack, onSuccess }: Props) => {
 
     const handleSubmit = (e: React.FormEvent) => {
         e.preventDefault()
-        if (onSuccess) onSuccess()
+        if (onSuccess) onSuccess(form)
     }
 
     return (
         <S.Form onSubmit={handleSubmit}>
-            <S.Title>Pagamento - Valor a pagar R$ {total}</S.Title>
+            <S.Title>Pagamento - Valor a pagar: R$ {total}</S.Title>
 
             <S.Label style={{ fontSize: '20px' }}>Nome no cartão</S.Label>
             <S.Input
                 name="nome"
                 onChange={handleChange}
-                value={form.nome}
+                value={form.nome} required 
             />
 
             <S.Row>
@@ -55,14 +55,13 @@ const PaymentForm = ({ total, onBack, onSuccess }: Props) => {
                     />
                 </div>
             </S.Row>
-
             <S.Row>
                 <div>
                     <S.Label style={{ fontSize: '18px' }}>Mês de vencimento</S.Label>
                     <S.Input
                         name="mes"
                         onChange={handleChange}
-                        value={form.mes} 
+                        value={form.mes} required 
                     />
                 </div>
                 <div>
@@ -70,7 +69,7 @@ const PaymentForm = ({ total, onBack, onSuccess }: Props) => {
                     <S.Input
                         name="ano"
                         onChange={handleChange}
-                        value={form.ano}
+                        value={form.ano} required
                     />
                 </div>
             </S.Row>
