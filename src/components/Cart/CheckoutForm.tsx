@@ -66,7 +66,7 @@ const CheckoutForm = ({ onBack, onSuccess }: Props) => {
             <S.Label>Complemento (opcional)</S.Label>
             <S.Input name="complemento" value={form.complemento} onChange={handleChange} />
 
-            <S.Button type="submit">Continuar com o pagamento</S.Button>
+            <S.Button style={{ marginTop: "20px" }} type="submit">Continuar com o pagamento</S.Button>
             <S.Button type="button" onClick={onBack}>
                 Voltar para o carrinho
             </S.Button>

@@ -30,7 +30,7 @@ const PaymentForm = ({ total, onBack, onSuccess }: Props) => {
         <S.Form onSubmit={handleSubmit}>
             <S.Title>Pagamento - Valor a pagar: R$ {total}</S.Title>
 
-            <S.Label style={{ fontSize: '20px' }}>Nome no cartão</S.Label>
+            <S.Label>Nome no cartão</S.Label>
             <S.Input
                 name="nome"
                 onChange={handleChange}
@@ -38,26 +38,27 @@ const PaymentForm = ({ total, onBack, onSuccess }: Props) => {
             />
 
             <S.Row>
-                <div>
-                    <S.Label style={{ fontSize: '18px' }}>Número do cartão</S.Label>
+                {/* Use os novos wrappers para o número do cartão e CVV */}
+                <S.CardNumberInputWrapper>
+                    <S.Label>Número do cartão</S.Label>
                     <S.Input
                         name="numero" type="number"
                         onChange={handleChange}
                         value={form.numero} required
                     />
-                </div>
-                <div>
-                    <S.Label style={{ fontSize: '18px' }}>CVV</S.Label>
+                </S.CardNumberInputWrapper>
+                <S.CvvInputWrapper>
+                    <S.Label>CVV</S.Label>
                     <S.Input
                         name="cvv" type="number"
                         onChange={handleChange}
                         value={form.cvv} required
                     />
-                </div>
+                </S.CvvInputWrapper>
             </S.Row>
             <S.Row>
                 <div>
-                    <S.Label style={{ fontSize: '18px' }}>Mês de vencimento</S.Label>
+                    <S.Label>Mês de vencimento</S.Label>
                     <S.Input
                         name="mes"
                         onChange={handleChange}
@@ -65,7 +66,7 @@ const PaymentForm = ({ total, onBack, onSuccess }: Props) => {
                     />
                 </div>
                 <div>
-                    <S.Label style={{ fontSize: '18px' }}>Ano de vencimento</S.Label>
+                    <S.Label>Ano de vencimento</S.Label>
                     <S.Input
                         name="ano"
                         onChange={handleChange}

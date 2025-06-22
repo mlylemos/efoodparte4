@@ -11,14 +11,14 @@ export const Form = styled.form`
     height: 100%;
     `
 
-    export const Title = styled.h2`
+export const Title = styled.h2`
     font-size: 18px;
     font-weight: bold;
     margin-bottom: 8px;
     color: #FFEBD9;
     `
 
-    export const CloseButton = styled.button`
+export const CloseButton = styled.button`
     background: transparent;
     border: none;
     color: #fff;
@@ -29,41 +29,41 @@ export const Form = styled.form`
     cursor: pointer;
     `
 
-    export const Label = styled.label`
-    font-size: 17px;
-    margin-bottom: 4px;
+export const Label = styled.label`
+    font-size: 14px;
     padding-bottom: 0;
     border-bottom: 0;
     `
 
-    export const Input = styled.input`
+export const Input = styled.input`
     width: 100%;
+    height: 32px;
     padding: 8px;
-    border-radius: 8px;
     border: none;
     background-color: #FFEBD9;
     color: #000;
     font-size: 14px;
     `
 
-    export const Row = styled.div`
+export const Row = styled.div`
     display: flex;
-    gap: 8px;
+    gap: 35px; 
+    margin-bottom: 16px; 
 
     > div {
-        flex: 1;
         display: flex;
         flex-direction: column;
     }
     `
 
-    export const Button = styled.button`
+export const Button = styled.button`
     background-color: #FFEBD9;
     border: none;
-    border-radius: 8px;
+    height: 24px;
+    width: 100%;
     padding: 8px;
     color: #e66767;
-    font-weight: bold;
+    font-weight: 700;
     font-size: 14px;
     cursor: pointer;
     margin-top: 8px;
@@ -72,3 +72,14 @@ export const Form = styled.form`
         background-color: #fff;
     }
 `
+
+export const CardNumberInputWrapper = styled.div`
+    width: 228px; 
+    flex-direction: column;
+`;
+
+export const CvvInputWrapper = styled.div`
+    width: 87px; 
+    display: flex;
+    flex-direction: column;
+`;

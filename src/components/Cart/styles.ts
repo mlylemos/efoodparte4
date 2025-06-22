@@ -52,9 +52,11 @@ export const Overlay = styled.div`
 
 export const Sidebar = styled.aside`
   background-color: #e66767;
-  color: #fff;
-  width: 400px;
+  color: #FFEBD9;
+  width: 360px;
   height: 100vh;
+  font-size: 14px;
+  font-weight: 700;
   padding: 16px;
   position: fixed;
   right: 0;
@@ -80,7 +82,6 @@ ul {
     background-color: #fff5f5;
     color: #e66767;
     padding: 8px;
-    border-radius: 8px;
     display: flex;
     align-items: center;
     gap: 8px;
@@ -91,7 +92,6 @@ ul {
       width: 60px;
       height: 60px;
       object-fit: cover;
-      border-radius: 4px;
     }
 
     div {
@@ -114,7 +114,7 @@ ul {
       background: none;
       border: none;
       width: 32px;
-      height: 32px;
+      height: 24px;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -141,18 +141,21 @@ export const Total = styled.div`
 `
 
 export const ContinueButton = styled.button`
-  background-color: #fff;
+  background: #FFEBD9;
   color: #e66767;
-  font-weight: bold;
+  font-weight: 700;
+  font-size: 14px;
   width: 100%;
+  height: 24px;
   padding: 12px;
-  border-radius: 4px;
   border: none;
   cursor: pointer;
 `
 export const Label = styled.label`
   font-weight: bold;
   margin-bottom: 4px;
+  font-size: 14px;
+  font-weight: 700;
   display: block;
   color: #fff;
 `
@@ -167,3 +170,14 @@ export const Row = styled.div`
     flex-direction: column;
   }
 `
+export const CardNumberInputWrapper = styled.div`
+  width: 200px;
+  display: flex;
+  flex-direction: column;
+`;
+
+export const CvvInputWrapper = styled.div`
+  width: 80px; 
+  display: flex;
+  flex-direction: column;
+`;

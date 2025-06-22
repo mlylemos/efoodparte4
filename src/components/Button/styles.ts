@@ -3,12 +3,12 @@ import styled from 'styled-components'
 export const StyledButton = styled.button`
   padding: 8px 16px;
   background-color: #e66767;
-  color: #fff;
+  color: #FFEBD9;
   border: none;
-  border-radius: 4px;
   cursor: pointer;
+  align-self: flex-start;
   font-size: 14px;
-  font-weight: bold;
+  font-weight: 700;
   transition: 0.3s;
 
   &:hover {

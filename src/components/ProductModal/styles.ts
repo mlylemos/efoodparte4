@@ -16,9 +16,8 @@ export const Overlay = styled.div`
 
     export const ModalContent = styled.div`
     background: #e66767;
-    color: #fff;
+    color:  #FFEBD9;
     padding: 32px;
-    border-radius: 8px;
     position: relative;
     max-width: 1024px;
     width: 100%;
@@ -28,20 +27,25 @@ export const Overlay = styled.div`
     `
 
     export const CloseButton = styled.button`
+    height: 16px;
+    width: 16px;
     position: absolute;
-    top: 0px;
+    top: 14px;
     right: 16px;
-    font-size: 40px;
     background: none;
     border: none;
     color: #fff;
     cursor: pointer;
+    
+    img {
+        width: 16px;
+        height: 16px;
+    }
     `
 
     export const Image = styled.img`
-    max-width: 400px;
-    max-height: 400px;
-    border-radius: 8px;
+    max-width: 380px;
+    height: 280px;
     `
 
     export const Content = styled.div`
@@ -51,29 +55,37 @@ export const Overlay = styled.div`
     `
 
     export const Title = styled.h2`
-    font-size: 24px;
+    font-size: 18px;
     margin-bottom: 16px;
+    font-weight: 900;
+    line-height: 100%;
+    height: 21px;
+    color: #FFffff;
     `
 
     export const Portion = styled.p`
     font-size: 14px;
-    font-weight: bold;
+    font-weight: 400;
     margin-bottom: 24px;
+    line-height: 22px;
     `
 
     export const Description = styled.p`
-    font-size: 16px;
-    line-height: 1.6;
-    margin-bottom: 24px;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 22px;
+    margin-bottom: 25px;
     `
 
     export const Button = styled.button`
-    background: #fff;
+    height: 24px;
+    font-size: 14px;
+    width: 218px;
+    background: #FFEBD9;
     color: #e66767;
+    padding: 0;
     border: none;
-    padding: 12px 24px;
-    font-weight: bold;
+    font-weight: 700;
     cursor: pointer;
-    border-radius: 8px;
     align-self: flex-start;
 `

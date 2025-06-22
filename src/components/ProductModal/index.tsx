@@ -14,6 +14,7 @@ import {
 import { useDispatch } from 'react-redux'
 import { adicionar } from '../../store/reducers/carrinho'
 import type { Prato } from '../../types'
+import close from '../../assets/fechar.png'
 
 type Props = {
     isOpen: boolean
@@ -45,7 +46,7 @@ const ProductModal = ({ isOpen, onClose, prato }: Props) => {
     return (
         <Overlay>
             <ModalContent>
-                <CloseButton onClick={onClose}>×</CloseButton>
+                <CloseButton onClick={onClose}><img src={close} alt="botao fechar" /></CloseButton>
                 <Image src={foto} alt={nome} />
                 <Content>
                     <Title>{nome}</Title>

@@ -28,12 +28,19 @@ const Button = styled.button`
   font-size: 16px;
   border-radius: 8px;
   cursor: pointer;
-  margin-top: 24px;
+  margin-top: 24px; 
+  heigth: 24px;
+  display: flex;
+  justify-content: center; 
+  align-items: center;   
+  margin: 24px auto 0 auto;   
+  width: fit-content; 
 
   &:hover {
     background-color: #cc5555;
   }
 `
+
 
 const Confirmacao = () => {
   const location = useLocation()
