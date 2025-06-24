@@ -46,7 +46,7 @@ export const Title = styled.h2`
     color: #fff;
     font-family: 'Roboto', sans-serif;
     font-weight: 700;
-    font-size: 36px;
+    font-size: 32px;
     line-height: 100%;
     letter-spacing: 0;
     position: absolute;
