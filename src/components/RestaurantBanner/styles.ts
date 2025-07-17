@@ -49,3 +49,4 @@ export const Title = styled.h2`
     font-weight: bold;
     margin: 0;
 `
+
