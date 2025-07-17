@@ -3,13 +3,13 @@ import styled from 'styled-components'
 import Footer from '../../components/Footer'
 
 const Container = styled.div`
-  padding: 32px;
+  padding: 16px 32px 32px 32px;
   text-align: center;
   min-height: 60vh;
 `
 
 const Title = styled.h2`
-  font-size: 24px;
+  font-size: 28px;
   color: #e66767;
   margin-bottom: 16px;
 `
@@ -17,7 +17,13 @@ const Title = styled.h2`
 const Text = styled.p`
   font-size: 18px;
   color: #333;
-  margin-bottom: 12px;
+  margin-bottom: 8px;
+`
+const Text1 = styled.p`
+  font-size: 20px;
+  color: #333;
+  margin-bottom: 8px;
+  margin-top:  17px;
 `
 
 const Button = styled.button`
@@ -29,7 +35,7 @@ const Button = styled.button`
   border-radius: 8px;
   cursor: pointer;
   margin-top: 24px; 
-  heigth: 24px;
+  height: 35px;
   display: flex;
   justify-content: center; 
   align-items: center;   
@@ -41,12 +47,17 @@ const Button = styled.button`
   }
 `
 
-
 const Confirmacao = () => {
   const location = useLocation()
   const navigate = useNavigate()
 
-  const { orderId, nome, endereco, cidade } = location.state || {}
+  const {
+    orderId,
+    nome,
+    endereco,
+    address,
+    payment
+  } = location.state || {}
 
   const handleConcluir = () => {
     navigate('/')
@@ -58,9 +69,14 @@ const Confirmacao = () => {
         <Title>Pedido confirmado!</Title>
         <Text> Pedido número: <strong>{String(orderId).replace('#', '')}</strong> </Text>
         {nome && <Text>Nome: {nome}</Text>}
-        {endereco && cidade && <Text>Endereço: {endereco}, {cidade}</Text>}
-        <Text>Seu pedido foi realizado com sucesso.</Text>
-        <Text>Em breve você receberá sua comida no conforto da sua casa :)</Text>
+        {endereco && <Text>Endereço: {endereco}, {address?.number}</Text>}
+        <Text>CEP: {address?.zipCode}</Text>
+        <Text>Cidade: {address?.city}</Text>
+        <Text>Forma de pagamento: Cartão de crédito em nome de {payment?.card?.name}</Text>
+        <Text>Final do cartão: **** {payment?.card?.number?.slice(-4)}</Text>
+        <Text>Vencimento: {payment?.card?.expires?.month}/{payment?.card?.expires?.year}</Text>
+        <Text1><strong>Seu pedido foi realizado com sucesso.</strong></Text1>
+        <Text><strong>Em breve você receberá sua comida no conforto da sua casa :)</strong></Text>
         <Button onClick={handleConcluir}>Concluir</Button>
       </Container>
       <Footer />

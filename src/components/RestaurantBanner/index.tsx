@@ -1,17 +1,20 @@
-import { Title, Cuisine, Background } from './styles'
+import { Background, Cuisine, Title, Content } from './styles'
+import Container from '../Container/styles.ts'
 
 type Props = {
     image: string
     name: string
     cuisine: string
-    children?: React.ReactNode
 }
 
-const RestaurantBanner = ({ image, name, cuisine, children }: Props) => (
+const RestaurantBanner = ({ image, name, cuisine }: Props) => (
     <Background image={image}>
-        {children}
-        <Cuisine>{cuisine}</Cuisine>
-        <Title>{name}</Title>
+        <Container>
+            <Content>
+                <Cuisine>{cuisine}</Cuisine>
+                <Title>{name}</Title>
+            </Content>
+        </Container>
     </Background>
 )
 

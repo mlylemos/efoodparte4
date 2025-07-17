@@ -31,7 +31,7 @@ export const Overlay = styled.div`
     width: 16px;
     position: absolute;
     top: 14px;
-    right: 16px;
+    right: 8px;
     background: none;
     border: none;
     color: #fff;
@@ -60,7 +60,7 @@ export const Overlay = styled.div`
     font-weight: 900;
     line-height: 100%;
     height: 21px;
-    color: #FFffff;
+    color: #ffffff;
     `
 
     export const Portion = styled.p`

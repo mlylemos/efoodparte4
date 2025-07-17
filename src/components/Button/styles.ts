@@ -6,9 +6,8 @@ export const StyledButton = styled.button`
   color: #FFEBD9;
   border: none;
   cursor: pointer;
-  align-self: flex-start;
   font-size: 14px;
-  font-weight: 700;
+  font-weight: bold;
   transition: 0.3s;
 
   &:hover {

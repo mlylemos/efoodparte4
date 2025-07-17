@@ -20,7 +20,10 @@ const carrinhoSlice = createSlice({
             state.itens.push(action.payload)
         },
         remove: (state, action: PayloadAction<number>) => {
-            state.itens = state.itens.filter((item) => item.id !== action.payload)
+            const index = state.itens.findIndex((item) => item.id === action.payload)
+            if (index !== -1) {
+                state.itens.splice(index, 1)
+            }
         },
         toggleCart: (state) => {
             state.isOpen = !state.isOpen

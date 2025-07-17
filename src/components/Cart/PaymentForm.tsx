@@ -23,8 +23,42 @@ const PaymentForm = ({ total, onBack, onSuccess }: Props) => {
 
     const handleSubmit = (e: React.FormEvent) => {
         e.preventDefault()
-        if (onSuccess) onSuccess(form)
+
+        const cardNumberRegex = /^\d{13,19}$/
+        const cvvRegex = /^\d{3,4}$/
+        const yearRegex = /^\d{4}$/
+
+        const month = Number(form.mes)
+        const year = Number(form.ano)
+
+        if (!form.nome.trim()) {
+            alert('Nome no cartão inválido, digite ao menos 13 números')
+            return
+        }
+
+        if (!cardNumberRegex.test(form.numero)) {
+            alert('Número do cartão inválido')
+            return
+        }
+
+        if (!cvvRegex.test(form.cvv)) {
+            alert('CVV inválido')
+            return
+        }
+
+        if (month < 1 || month > 12) {
+            alert('Mês de vencimento inválido')
+            return
+        }
+
+        if (!yearRegex.test(form.ano) || year < new Date().getFullYear()) {
+            alert('Ano de vencimento inválido (use 4 dígitos)')
+            return
+        }
+
+        onSuccess(form)
     }
+
 
     return (
         <S.Form onSubmit={handleSubmit}>
@@ -34,15 +68,15 @@ const PaymentForm = ({ total, onBack, onSuccess }: Props) => {
             <S.Input
                 name="nome"
                 onChange={handleChange}
-                value={form.nome} required 
+                value={form.nome} required
             />
 
             <S.Row>
-                {/* Use os novos wrappers para o número do cartão e CVV */}
                 <S.CardNumberInputWrapper>
                     <S.Label>Número do cartão</S.Label>
                     <S.Input
                         name="numero" type="number"
+                        placeholder="Ex: 1234567812345678"
                         onChange={handleChange}
                         value={form.numero} required
                     />
@@ -56,13 +90,14 @@ const PaymentForm = ({ total, onBack, onSuccess }: Props) => {
                     />
                 </S.CvvInputWrapper>
             </S.Row>
-            <S.Row>
+            <S.Row style={{ display: 'flex', gap: '34px' }}>
                 <div>
                     <S.Label>Mês de vencimento</S.Label>
                     <S.Input
                         name="mes"
+                        placeholder="Ex: 12"
                         onChange={handleChange}
-                        value={form.mes} required 
+                        value={form.mes} required
                     />
                 </div>
                 <div>

@@ -2,37 +2,31 @@ import styled from 'styled-components'
 
 export const Form = styled.form`
     background: #e66767;
-    padding: 32px 8px;
+    padding: 0;
     color: #FFEBD9;
+    font-family: 'Roboto', sans-serif;
     position: relative;
     display: flex;
     flex-direction: column;
     gap: 9px;
     height: 100%;
+    width: 344px;
     `
 
 export const Title = styled.h2`
-    font-size: 18px;
-    font-weight: bold;
+    font-size: 16px;
+    font-weight: 700;
     margin-bottom: 8px;
     color: #FFEBD9;
-    `
-
-export const CloseButton = styled.button`
-    background: transparent;
-    border: none;
-    color: #fff;
-    font-size: 22px;
-    position: absolute;
-    top: 16px;
-    right: 16px;
-    cursor: pointer;
+    height: 19px;
     `
 
 export const Label = styled.label`
     font-size: 14px;
     padding-bottom: 0;
     border-bottom: 0;
+    font-weight: 700;
+    height: 16px;
     `
 
 export const Input = styled.input`
@@ -47,12 +41,16 @@ export const Input = styled.input`
 
 export const Row = styled.div`
     display: flex;
-    gap: 35px; 
-    margin-bottom: 16px; 
+    gap: 29px; 
+    margin-bottom: 0; 
 
     > div {
         display: flex;
         flex-direction: column;
+
+        label {
+        margin-bottom: 9px;
+        }
     }
     `
 
@@ -66,7 +64,7 @@ export const Button = styled.button`
     font-weight: 700;
     font-size: 14px;
     cursor: pointer;
-    margin-top: 8px;
+    margin-top: 5px;
 
     &:hover {
         background-color: #fff;

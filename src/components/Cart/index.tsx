@@ -47,10 +47,16 @@ const Cart = () => {
     setModalOpen(false)
   }
 
+  const handleOverlayClick = () => {
+    if (!showCheckout || step === 'entrega') {
+      dispatch(toggleCart())
+    }
+  }
+
   return (
     <S.CartContainer>
-      <S.Overlay />
-      <S.Sidebar>
+      <S.Overlay onClick={handleOverlayClick} />
+      <S.Sidebar onClick={(e) => e.stopPropagation()}>
         {!showCheckout ? (
           <>
             <ul>
@@ -138,12 +144,10 @@ const Cart = () => {
               })
                 .then((res) => res.json())
                 .then((resposta) => {
-                  console.log('Resposta da API:', resposta)
-
                   const id = resposta.orderId || resposta.id || 'N/A'
 
-                  dispatch(limpar())          
-                  dispatch(toggleCart())      
+                  dispatch(limpar())
+                  dispatch(toggleCart())
 
                   setShowCheckout(false)
                   setStep('entrega')
@@ -154,23 +158,27 @@ const Cart = () => {
                       orderId: id,
                       nome: dadosEntrega.nome,
                       endereco: dadosEntrega.endereco,
-                      cidade: dadosEntrega.cidade
+                      cidade: dadosEntrega.cidade,
+                      address: {
+                        zipCode: dadosEntrega.cep,
+                        city: dadosEntrega.cidade,
+                        number: dadosEntrega.numero
+                      },
+                      payment: {
+                        card: {
+                          name: dadosPagamento.nome,
+                          number: dadosPagamento.numero,
+                          expires: {
+                            month: dadosPagamento.mes,
+                            year: dadosPagamento.ano
+                          }
+                        }
+                      }
                     }
                   })
                 })
             }}
           />
-        )}
-        {!showCheckout && (
-          <S.ContinueButton
-            style={{ marginTop: 20 }}
-            type="button"
-            onClick={() => {
-              dispatch(toggleCart())
-            }}
-          >
-            Voltar
-          </S.ContinueButton>
         )}
       </S.Sidebar>
 

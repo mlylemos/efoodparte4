@@ -6,10 +6,11 @@ import {
     Logo,
     Nav,
     Cart,
+    Containeri,
     CenteredWrapper,
     CenteredText
 } from './styles'
-
+import Container from '../Container/styles'
 import { useDispatch, useSelector } from 'react-redux'
 import { toggleCart } from '../../store/reducers/carrinho'
 import type { RootReducer } from '../../store'
@@ -24,23 +25,24 @@ const Header = () => {
         <HeaderBar $isHome={isHome}>
             {isHome ? (
                 <CenteredWrapper>
-                    <Logo src={logo} alt="efood logo" />
+                    <Containeri>
+                    <Logo $isHome={isHome} src={logo} alt="efood logo" />
                     <CenteredText>
                         Viva experiências gastronômicas no conforto da sua casa
                     </CenteredText>
+                    </Containeri>
                 </CenteredWrapper>
             ) : (
                 <>
+                <Container>
                     <Link to="/">
                         <Nav>Restaurantes</Nav>
                     </Link>
                     <Logo src={logo} alt="efood logo" />
-                    <Cart
-                        style={{ cursor: 'pointer' }}
-                        onClick={() => dispatch(toggleCart())}
-                    >
+                    <Cart onClick={() => dispatch(toggleCart())}>
                         {itens.length} produto(s) no carrinho
                     </Cart>
+                </Container>
                 </>
             )}
         </HeaderBar>

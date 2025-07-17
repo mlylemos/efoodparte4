@@ -9,6 +9,13 @@ export const CartContainer = styled.div`
   z-index: 1000;
   overflow: hidden;
 
+  input:focus,
+  select:focus,
+  textarea:focus {
+    outline: none !important;
+    box-shadow: 0 0 0 3px #b34f4fff !important;
+  }
+
   .cancelar {
     background: none;
     border: none;
@@ -25,6 +32,7 @@ export const CartContainer = styled.div`
     object-fit: contain;
     display: block;
   }
+    
 }
 
 
@@ -53,25 +61,18 @@ export const Overlay = styled.div`
 export const Sidebar = styled.aside`
   background-color: #e66767;
   color: #FFEBD9;
-  width: 360px;
+  font-family: 'Roboto', sans-serif;
+  width: auto;
+  min-width: 360px;
   height: 100vh;
-  font-size: 14px;
-  font-weight: 700;
-  padding: 16px;
+  min-height: 100vh;
+  overflow-y: auto;
+  padding: 32px 8px 100px 8px;
   position: fixed;
   right: 0;
   top: 0;
   z-index: 1001;
   overflow-y: auto;
-
-  .close-icon {
-    width: 16px;
-    height: 16px;
-    margin-left: auto;
-    display: block;
-    cursor: pointer;
-    margin-bottom: 24px;
-  }
 
 ul {
   list-style: none;
@@ -79,9 +80,11 @@ ul {
   margin: 0;
 
   li {
-    background-color: #fff5f5;
+    background-color: #FFEBD9;
     color: #e66767;
     padding: 8px;
+    width: 344px;
+    height: 100px;
     display: flex;
     align-items: center;
     gap: 8px;
@@ -89,40 +92,49 @@ ul {
     position: relative; 
 
     img {
-      width: 60px;
-      height: 60px;
+      width: 80px;
+      height: 80px;
       object-fit: cover;
     }
 
-    div {
-      flex: 1;
+  div {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  height: 100%;
 
-      h3 {
-        font-weight: bold;
-        margin: 0;
-      }
+  h3 {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 18px;
+    height: 21px;
+    line-height: 100%;
+  }
 
-      span {
-        font-size: 14px;
-      }
-    }
+  span {
+    font-size: 14px;
+    font-weight: 400;
+    height: 22px;
+    width: 67px;
+  }
+}
 
     button.cancelar {
       position: absolute;
       bottom: 8px;
-      right: 8px;
+      right: 1px;
       background: none;
       border: none;
-      width: 32px;
-      height: 24px;
+      width: 16px;
+      height: 16px;
       display: flex;
       align-items: center;
       justify-content: center;
       cursor: pointer;
 
       img {
-        width: 20px;
-        height: 20px;
+        width: 18px;
+        height: 18px;
         object-fit: contain;
         display: block;
       }
@@ -135,18 +147,19 @@ ul {
 export const Total = styled.div`
   display: flex;
   justify-content: space-between;
-  font-weight: bold;
-  margin: 16px 0;
+  font-weight: 700;
+  margin: 35px 0 16px 0;
   font-size: 14px;
 `
 
 export const ContinueButton = styled.button`
-  background: #FFEBD9;
+  background-color: #FFEBD9;
   color: #e66767;
-  font-weight: 700;
   font-size: 14px;
-  width: 100%;
+  font-weight: 700;
   height: 24px;
+  width: 344px;
+  line-height: 100%;
   padding: 12px;
   border: none;
   cursor: pointer;

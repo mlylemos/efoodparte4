@@ -13,7 +13,6 @@ export const HeaderBar = styled.header<HeaderProps>`
   display: flex;
   align-items: center;
   justify-content: ${({ $isHome }) => ($isHome ? 'center' : 'space-between')};
-  padding: 0 171px;
   position: relative;
   width: 100%;
   top: 0;
@@ -21,41 +20,62 @@ export const HeaderBar = styled.header<HeaderProps>`
   z-index: 2;
 `
 
-export const Logo = styled.img`
+export const Logo = styled.img<{ $isHome?: boolean }>`
   width: 125px;
-  height: 57.5px;
-  margin-bottom: 8px;
-  align-self: center;
+  display: block;
+  margin: ${({ $isHome }) =>
+    $isHome ? '4px auto 140px auto' : '0 256.71px 0 327px'};
 `
 
 export const Nav = styled.div`
   color: #e66767;
+  height: 21px;
   font-size: 18px;
   font-weight: bold;
+  font-family: 'Roboto', sans-serif;
+  margin-left: 0;
+  padding-left: 0;
+  border-left: 0;
 `
 
 export const Cart = styled.div`
   color: #e66767;
+  height: 21px;
   font-size: 18px;
   font-weight: bold;
+  font-family: 'Roboto', sans-serif;
+  margin-right: 100px;
+  margin-left: 10px;
+  white-space: nowrap;
+  cursor: pointer;
 `
 
 export const CenteredWrapper = styled.div`
+  width: 100%;
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 50px; 
-  padding-left: 32px;
-
+  justify-content: center;
 `
 
 export const CenteredText = styled.p`
   font-size: 36px;
-  line-height: 100%;
   height: 84px;
   width: 539px;
   color: #e66767;
   text-align: center;
   font-weight: bold;
-  margin: 0;
+  padding: 0;
+  border: none;
+  line-height: 100%;
+`
+
+export const Containeri = styled.div`
+  max-width: 1024px;
+  margin: 0 auto;
+  padding: 0;
+  width: 100%;
+  height: 360px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 `

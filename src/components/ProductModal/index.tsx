@@ -44,7 +44,7 @@ const ProductModal = ({ isOpen, onClose, prato }: Props) => {
     const { nome, descricao, foto, porcao, preco } = prato
 
     return (
-        <Overlay>
+        <Overlay onClick={onClose}>
             <ModalContent>
                 <CloseButton onClick={onClose}><img src={close} alt="botao fechar" /></CloseButton>
                 <Image src={foto} alt={nome} />

@@ -36,6 +36,25 @@ const CheckoutForm = ({ onBack, onSuccess }: Props) => {
 
     const handleSubmit = (e: React.FormEvent) => {
         e.preventDefault()
+
+        const cepRegex = /^\d{5}-?\d{3}$/
+        const nomeRegex = /^[A-Za-zÀ-ÿ\s']+$/
+
+        if (!cepRegex.test(form.cep)) {
+            alert('CEP inválido. Use o formato 00000-000')
+            return
+        }
+
+        if (!nomeRegex.test(form.nome)) {
+            alert('Nome do destinatário inválido')
+            return
+        }
+
+        if (!form.numero || isNaN(Number(form.numero))) {
+            alert('Número do endereço inválido')
+            return
+        }
+
         onSuccess(form)
     }
 
@@ -47,7 +66,7 @@ const CheckoutForm = ({ onBack, onSuccess }: Props) => {
             <S.Input name="nome" value={form.nome} onChange={handleChange} required />
 
             <S.Label>Endereço</S.Label>
-            <S.Input name="endereco" value={form.endereco} onChange={handleChange} required/>
+            <S.Input name="endereco" placeholder="Ex: Rua das Flores"value={form.endereco} onChange={handleChange} required />
 
             <S.Label>Cidade</S.Label>
             <S.Input name="cidade" value={form.cidade} onChange={handleChange} required />
@@ -55,7 +74,7 @@ const CheckoutForm = ({ onBack, onSuccess }: Props) => {
             <S.Row>
                 <div>
                     <S.Label>CEP</S.Label>
-                    <S.Input name="cep" value={form.cep} onChange={handleChange} required />
+                    <S.Input name="cep" placeholder="Ex: 12345-678" value={form.cep} onChange={handleChange} required />
                 </div>
                 <div>
                     <S.Label>Número</S.Label>
